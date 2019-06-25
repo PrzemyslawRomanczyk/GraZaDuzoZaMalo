@@ -66,19 +66,14 @@ namespace GraMonolitycznie
                 return "trafiono";
         }
 
-        static int wylosowana = 0;
-
-        static void Main(string[] args)
+        static void wybory()
         {
             int min = WczytajLiczbe("Podaj zakres od: ");
             int max = WczytajLiczbe("Podaj zakres do: ");
 
             wylosowana = Losuj(min, max);
             Console.WriteLine($"Wylosowałem liczbę od {min} do {max}. \n Odgadnij ją");
-
-#if(DEBUG)
-            Console.WriteLine(wylosowana);
-#endif
+            int licznik = 0;
 
             do
             {
@@ -86,8 +81,9 @@ namespace GraMonolitycznie
                 try
                 {
                     propozycja = WczytajLiczbe("Podaj swoją propozycję: ");
+                    licznik++;
                 }
-                catch(OperationCanceledException)
+                catch (OperationCanceledException)
                 {
                     Console.WriteLine("Wyjście awaryjne.");
                     return;  //wyjście z Main(), czyli opuszczenie programu
@@ -98,11 +94,32 @@ namespace GraMonolitycznie
                 string wynik = Ocena(propozycja);
                 Console.WriteLine(wynik);
                 if (wynik == "trafiono")
+                {
+                    Console.WriteLine($"Brawo udało Ci się odgadnąć liczbę po {licznik} próbach");
                     break;
+                }
             }
             while (true);
 
             Console.WriteLine("Koniec gry");
+            Console.WriteLine("*******************************************************************************************************************");
+            Console.WriteLine("Czy chcesz spróbować jeszcze raz(T - Tak, N - Nie)?");
+            string decyzja = Console.ReadLine();
+            if (decyzja == "T")
+                wybory();
+            else
+            {
+                Console.WriteLine("Wciśnij enter aby zamknąć program");
+                Console.ReadLine();
+            }
+        }
+
+        static int wylosowana = 0;
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Witam w grze za dużo za mało. Podaj zakres liczb do wylosowania: ");
+            wybory();
         }
     }
 }
