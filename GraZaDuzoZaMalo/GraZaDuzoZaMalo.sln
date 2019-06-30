@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectModelGry", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraGUI", "GraGUI\GraGUI.csproj", "{562E1D6C-B1E5-45D7-A8F1-A4EBB0E0ECAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komputer_zgaduje", "Komputer_zgaduje\Komputer_zgaduje.csproj", "{1BDA8B56-1EE2-44C0-9C83-88AFC2BDACC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{562E1D6C-B1E5-45D7-A8F1-A4EBB0E0ECAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{562E1D6C-B1E5-45D7-A8F1-A4EBB0E0ECAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{562E1D6C-B1E5-45D7-A8F1-A4EBB0E0ECAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BDA8B56-1EE2-44C0-9C83-88AFC2BDACC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BDA8B56-1EE2-44C0-9C83-88AFC2BDACC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BDA8B56-1EE2-44C0-9C83-88AFC2BDACC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BDA8B56-1EE2-44C0-9C83-88AFC2BDACC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

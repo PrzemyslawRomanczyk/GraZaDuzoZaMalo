@@ -83,6 +83,34 @@ namespace ModelGry
             return generator.Next(a, b + 1);
         }
 
+        public int WczytajLiczbe(string prompt = "Podaj liczbę (lub X aby zakończyć): ")
+        {
+            int propozycja = 0;
+            while (true)
+            {
+                Console.Write(prompt);
+                string tekst = Console.ReadLine();
+                if (tekst.ToLower() == "x")
+                    throw new OperationCanceledException("wprowadzono X");
 
+                try
+                {
+                    propozycja = Convert.ToInt32(tekst);
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Nie podano liczby! Spróbuj ponownie");
+                    continue;
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Liczba nie mieści się w rejestrze! Spróbuj ponownie");
+                    continue;
+                }
+
+            }
+            return propozycja;
+        }
     }
 }
